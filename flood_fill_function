@@ -29,11 +29,11 @@ def flood_fill(input_board: List[str], old: str, new: str, x: int, y: int) -> Li
     elif input_board[x][y] != old:
         return input_board
     else:
-      input_board[x] = input_board[x][:y] + new + input_board[x][y + 1:]
-      flood_fill(input_board, old, new, x + 1, y)
-      flood_fill(input_board, old, new, x - 1, y)
-      flood_fill(input_board, old, new, x, y + 1)
-      flood_fill(input_board, old, new, x, y - 1)
+        input_board[x] = input_board[x][:y] + new + input_board[x][y + 1:]
+        flood_fill(input_board, old, new, x + 1, y)
+        flood_fill(input_board, old, new, x - 1, y)
+        flood_fill(input_board, old, new, x, y + 1)
+        flood_fill(input_board, old, new, x, y - 1)
     return input_board
 
 modified_board = flood_fill(board, ".", "~", 5, 12)
